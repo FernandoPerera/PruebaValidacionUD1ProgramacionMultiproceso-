@@ -9,17 +9,17 @@ def father() :
       
      while (contador <= 10) :
         
-         newPid = os.fork()
+        newPid = os.fork()
 
-         if newPid == 0 : 
-             children()
-         else :
+        if newPid == 0 : 
+            children()
+        else :
             childrenPid = newPid
             date = datetime.now()
             print('\nIniciando el proceso : %d a las %s \n ' % (childrenPid, date.time().strftime("%H:%M:%S")))
 
             sleep(10) 
-         contador += 1
+        contador += 1
 def children() :
     
     print('\t········ | Iniciando proceso con PID %d | ········\n' % os.getpid())
